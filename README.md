@@ -69,9 +69,11 @@ Bryan Williamson
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+
+"https://wireframe.cc/pro/pp/a2d29070b510511" 
 
 ### [BONUS] Digital Wireframes & Mockups
+![IMG_2403](https://user-images.githubusercontent.com/83090104/150610780-6ac70369-9e2a-4832-aefc-89422a03daf9.PNG)
 
 ### [BONUS] Interactive Prototype
 
@@ -83,3 +85,4 @@ Bryan Williamson
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
+

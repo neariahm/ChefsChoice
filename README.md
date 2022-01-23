@@ -1,4 +1,4 @@
-# ChefsChoice
+# Chefs' Choice
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -8,7 +8,9 @@
 
 ## Overview
 ### Description
-Mobile app created by team ChefsChoice that allows users to create lists and generate recipes
+
+Chefs’ Choice makes meal planning simple through recipe recommendations for users based on ingredients they already have in their fridge or pantry.
+
 
 Team Members:
 
@@ -20,8 +22,8 @@ Bryan Williamson
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
-- **Category:**
-- **Mobile:**
+- **Category:** Food & Drink
+- **Mobile:** This app is intended for mobile devices using android operating system. 
 - **Story:**
 - **Market:**
 - **Habit:**

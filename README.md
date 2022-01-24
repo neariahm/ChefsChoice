@@ -24,10 +24,10 @@ Bryan Williamson
 [Evaluation of your app across the following attributes]
 - **Category:** Food & Drink
 - **Mobile:** This app is intended for mobile devices using android operating system. 
-- **Story:**
-- **Market:**
-- **Habit:**
-- **Scope:**
+- **Story:** Uses ML Kit to detect food items and generates recipes using ingredients the user already has
+- **Market:** This app is open to users of all ages.
+- **Habit:** This app could be used daily for each meal (breakfast, lunch, dinner) of the day. 
+- **Scope:** First we would e
 
 ## Product Spec
 
@@ -35,30 +35,49 @@ Bryan Williamson
 
 **Required Must-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* User can sign up or log in to see their previous activity
+* User can click a button to access their camera and capture an image 
+* User can discover new recipes 
+* User can save their favorite recipes
+
 
 **Optional Nice-to-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* User can share their favorite recipes (via text messaging, email, social media, etc.)
+* User can rate recipes
+* User can omit recipes based on dietary restrictions, food allergies or disliked items
+* User can search for cocktail recipes or wine pairings
+* User can review recipes 
+
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* Splash Screen 
+   * A brief introduction of the app
+ 
+* Camera Screen 
+   * Allows user to capture image in real-time
+
+* Ingredients Screen 
+   * Allows user to see the identified items that will be used to generate recipes
+   
+*  Recipe Screen 
+   * Allows user to scroll through and select a recipe 
+ 
+*  Favorites Screen 
+   * Allows user to see an overview of their favorite recipes
+   
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* App Introduction
+* Camera
+* Suggested Recipes 
+
+Optional: 
+* Favorites 
 
 **Flow Navigation** (Screen to Screen)
 

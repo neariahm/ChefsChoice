@@ -21,7 +21,7 @@ Tameika Scott, and
 Bryan Williamson
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
+
 - **Category:** Food & Drink
 - **Mobile:** This app is intended for mobile devices using android operating system. 
 - **Story:** Users can capture an image of their fridge or pantry to detect ingredients that can be used in various recipes. 

@@ -14,20 +14,20 @@ Chefs’ Choice makes meal planning simple through recipe recommendations for us
 
 Team Members:
 
-Lucille Campbell
-Tyrees Carney
-Neariah Mandisa
-Tameika Scott
+Lucille Campbell,
+Tyrees Carney,
+Neariah Mandisa,
+Tameika Scott, and
 Bryan Williamson
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
 - **Category:** Food & Drink
 - **Mobile:** This app is intended for mobile devices using android operating system. 
-- **Story:** Uses ML Kit to detect food items and generates recipes using ingredients the user already has
+- **Story:** Users can capture an image of their fridge or pantry to detect ingredients that can be used in various recipes. 
 - **Market:** This app is open to users of all ages.
 - **Habit:** This app could be used daily for each meal (breakfast, lunch, dinner) of the day. 
-- **Scope:** First we would e
+- **Scope:** First we would like users to use their camera to filter ingredients in generated recipes which helps eliminate food waste and decision fatigue. Large potential for business use by fitness trainers to create meal plans for their clients. 
 
 ## Product Spec
 
@@ -89,9 +89,7 @@ Optional:
    * ...
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-
-"https://wireframe.cc/pro/pp/a2d29070b510511" 
+See early mockups: "https://wireframe.cc/pro/pp/a2d29070b510511" 
 
 ### [BONUS] Digital Wireframes & Mockups
 ![IMG_2403](https://user-images.githubusercontent.com/83090104/150610780-6ac70369-9e2a-4832-aefc-89422a03daf9.PNG)

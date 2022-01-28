@@ -47,12 +47,13 @@ Bryan Williamson
 * User can rate recipes
 * User can omit recipes based on dietary restrictions, food allergies or disliked items
 * User can search for cocktail recipes or wine pairings
-* User can review recipes 
+* User can review recipes
+* User can learn food trivia
 
 
 ### 2. Screen Archetypes
 
-* Splash Screen 
+* Splash/Login Screen 
    * A brief introduction of the app
  
 * Camera Screen 
@@ -63,6 +64,9 @@ Bryan Williamson
    
 *  Recipe Screen 
    * Allows user to scroll through and select a recipe 
+   
+*  Detail Screen 
+   * Allows user to click a recipe option and view more information about it in detail
  
 *  Favorites Screen 
    * Allows user to see an overview of their favorite recipes

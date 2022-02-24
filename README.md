@@ -11,7 +11,6 @@
 
 Chefs’ Choice makes meal planning simple through recipe recommendations for users based on ingredients they already have in their fridge or pantry.
 
-
 Team Members:
 
 Lucille Campbell,

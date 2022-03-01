@@ -36,7 +36,7 @@ class MainActivityMLK : AppCompatActivity() {
         manager = LinearLayoutManager(this)
 
         // Click listener set on Button to launch camera activity
-        findViewById<FloatingActionButton>(R.id.button3).setOnClickListener {
+        findViewById<FloatingActionButton>(R.id.button).setOnClickListener {
             dispatchTakePictureIntent(REQUEST_IMAGE_CAPTURE)
         }
     }
@@ -85,8 +85,14 @@ class MainActivityMLK : AppCompatActivity() {
                     // ...
                 }
 
-            // Bind Bitmap image to ImageView
-            findViewById<ImageView>(R.id.capturedImage).setImageBitmap(imageBitmap)
+           // val options = BarcodeScannerOptions.Builder()
+            //    .setBarcodeFormats(
+            //        Barcode.FORMAT_QR_CODE,
+             //       Barcode.FORMAT_AZTEC)
+            //   .build()
+
+            // Bind Bitmap image to ImageView. Unsure of if this is still necessary
+           // findViewById<ImageView>(R.id.capturedImage).setImageBitmap(imageBitmap)
         }
     }
 }

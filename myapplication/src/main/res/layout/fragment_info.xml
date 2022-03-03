@@ -15,5 +15,5 @@
         android:src="@drawable/food002"
         android:scaleType="centerCrop"/>
 
-        />
+
 </FrameLayout>

@@ -36,10 +36,10 @@ fun setText(view: TextView, text: String?) {
     view.text = text
 }
 
-@BindingAdapter("foodTrivia")
-fun setTriviaText(view: TextView, data: Trivia ) {
-    view.text = data.text
-   }
+//@BindingAdapter("foodTrivia")
+//fun setTriviaText(view: TextView, data: Trivia ) {
+ //  view.text = data.text
+  // }
 
 
 //}

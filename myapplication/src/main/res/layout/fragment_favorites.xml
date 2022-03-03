@@ -51,7 +51,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/apple" />
+                />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -78,16 +78,16 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/food"
+                    android:id="@+id/food1"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/apple" />
+                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/food"
+                    android:layout_below="@id/food1"
                     android:layout_centerHorizontal="true"
                     android:text="Apple"
                     android:textSize="20sp" />
@@ -109,16 +109,16 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/food"
+                    android:id="@+id/food2"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/apple" />
+                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/food"
+                    android:layout_below="@id/food2"
                     android:layout_centerHorizontal="true"
                     android:text="Apple"
                     android:textSize="20sp" />
@@ -140,16 +140,16 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/food"
+                    android:id="@+id/food3"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/apple" />
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/food"
+                    android:layout_below="@id/food3"
                     android:layout_centerHorizontal="true"
                     android:text="Apple"
                     android:textSize="20sp" />
@@ -171,16 +171,16 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/food"
+                    android:id="@+id/food4"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/apple" />
+                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/food"
+                    android:layout_below="@id/food4"
                     android:layout_centerHorizontal="true"
                     android:text="Apple"
                     android:textSize="20sp" />
@@ -202,16 +202,16 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/food"
+                    android:id="@+id/food5"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/apple" />
+                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/food"
+                    android:layout_below="@id/food5"
                     android:layout_centerHorizontal="true"
                     android:text="Apple"
                     android:textSize="20sp" />
@@ -233,16 +233,16 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/food"
+                    android:id="@+id/food6"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/apple" />
+                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/food"
+                    android:layout_below="@id/food6"
                     android:layout_centerHorizontal="true"
                     android:text="Apple"
                     android:textSize="20sp" />
@@ -264,16 +264,16 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/food"
+                    android:id="@+id/food7"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/apple" />
+               />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/food"
+                    android:layout_below="@id/food7"
                     android:layout_centerHorizontal="true"
                     android:text="Apple"
                     android:textSize="20sp" />
@@ -295,16 +295,15 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/food"
+                    android:id="@+id/food8"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/apple" />
+                    android:layout_centerInParent="true" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/food"
+                    android:layout_below="@id/food8"
                     android:layout_centerHorizontal="true"
                     android:text="Apple"
                     android:textSize="20sp" />

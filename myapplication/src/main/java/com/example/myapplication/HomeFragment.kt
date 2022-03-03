@@ -57,3 +57,8 @@ class HomeFragment : Fragment() {
             }
     }
 }
+
+/* Get data from searchview & query the api to get the results
+
+
+ */

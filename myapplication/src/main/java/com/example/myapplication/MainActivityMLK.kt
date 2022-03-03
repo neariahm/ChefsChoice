@@ -64,7 +64,7 @@ class MainActivityMLK : AppCompatActivity() {
             // Create instance of ImageLabeler
             val labeler = ImageLabeling.getClient(ImageLabelerOptions.DEFAULT_OPTIONS)
             // Process InputImage using labeler
-            labeler.process(image)
+          /*  labeler.process(image)
                 .addOnSuccessListener { labels ->
                     // Task completed successfully
                     for (label in labels) {
@@ -83,7 +83,7 @@ class MainActivityMLK : AppCompatActivity() {
                 .addOnFailureListener { e ->
                     // Task failed with an exception
                     // ...
-                }
+                } */
 
            // val options = BarcodeScannerOptions.Builder()
             //    .setBarcodeFormats(

@@ -7,15 +7,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import android.widget.ImageView
-import androidx.activity.result.contract.ActivityResultContracts
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.label.ImageLabeling
 import com.google.mlkit.vision.label.defaults.ImageLabelerOptions
-import kotlin.math.roundToInt
+
 
 class MainActivityMLK : AppCompatActivity() {
     // Request code for camera intent
@@ -36,15 +34,15 @@ class MainActivityMLK : AppCompatActivity() {
         manager = LinearLayoutManager(this)
 
         // Click listener set on Button to launch camera activity
-        findViewById<FloatingActionButton>(R.id.button).setOnClickListener {
-            dispatchTakePictureIntent(REQUEST_IMAGE_CAPTURE)
+        findViewById<Button>(R.id.button).setOnClickListener {
+            dispatchTakePictureIntent()
         }
     }
 
-    private fun dispatchTakePictureIntent(requestCode: Int) {
+    private fun dispatchTakePictureIntent() {
         val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         try {
-            startActivityForResult(takePictureIntent, requestCode)
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
         } catch (e: ActivityNotFoundException) {
             // display error state to the user
         }
@@ -63,8 +61,8 @@ class MainActivityMLK : AppCompatActivity() {
             val image = InputImage.fromBitmap(imageBitmap, 0)
             // Create instance of ImageLabeler
             val labeler = ImageLabeling.getClient(ImageLabelerOptions.DEFAULT_OPTIONS)
-            // Process InputImage using labeler
-          /*  labeler.process(image)
+          //  Process InputImage using labeler
+                    labeler.process(image)
                 .addOnSuccessListener { labels ->
                     // Task completed successfully
                     for (label in labels) {
@@ -83,7 +81,7 @@ class MainActivityMLK : AppCompatActivity() {
                 .addOnFailureListener { e ->
                     // Task failed with an exception
                     // ...
-                } */
+                }
 
            // val options = BarcodeScannerOptions.Builder()
             //    .setBarcodeFormats(

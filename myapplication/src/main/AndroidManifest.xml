@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
-
-    <uses-feature android:name="android.hardware.camera"
-        android:required="true"/>
-
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
     <uses-feature
         android:name="android.software.leanback"
         android:required="false" />
-
 
     <application
         android:allowBackup="true"
@@ -19,7 +18,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChefsChoice">
-
+        <activity
+            android:name=".Cardview1"
+            android:exported="false" />
         <activity
             android:name=".MainActivityMLK"
             android:exported="false" />
@@ -28,12 +29,14 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
-        <activity android:name=".SplashScreen" android:theme="@style/SplashScreenBackground"
-            android:exported="true">
+            android:exported="true"></activity>
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true"
+            android:theme="@style/SplashScreenBackground">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

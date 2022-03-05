@@ -17,27 +17,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.example.myapplication.RecipesFragment"
-        android:background="@color/green">
+        >
 
 
+       <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="492dp"
+            android:button="@drawable/selector_favorites"
+            app:layout_constraintBottom_toBottomOf="@+id/recycler_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.969"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/recycler_view"
+            app:layout_constraintVertical_bias="1.0"
+            app:useMaterialThemeColors="false" />
 
-
-
-
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="492dp"
-        app:layout_constraintBottom_toBottomOf="@+id/recycler_view"
-        android:textColorLink="#710303"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/recycler_view"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
+        <Button
         android:id="@+id/button"
         android:layout_width="78dp"
         android:layout_height="48dp"
@@ -50,21 +47,20 @@
         app:layout_constraintVertical_bias="1.0" />
 
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
-            app:listData="@{viewModel.photos}"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_width="410dp"
             android:layout_height="540dp"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/searchView"
             app:layout_constraintVertical_bias="0.774"
-            tools:listitem="@layout/recipe_list"
-            android:clipToPadding="false"/>
+            app:listData="@{viewModel.photos}"
+            tools:listitem="@layout/recipe_list" />
 
         <SearchView
             android:id="@+id/searchView"

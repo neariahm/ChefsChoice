@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.util.Log
 import android.widget.EditText
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.LiveData
@@ -19,14 +20,14 @@ class RecipesViewModel : ViewModel() {
     private val _status = MutableLiveData<String>()
     private val _photos = MutableLiveData<List<Recipes>>()
 private val _trivia = MutableLiveData<Trivia>()
-//private val _random = MutableLiveData<RandomRecipe>()
+private val _random = MutableLiveData<RandomRecipe>()
 
 
     // The external immutable LiveData for the request status
     val status: LiveData<String> = _status
     val photos: LiveData<List<Recipes>> = _photos
       val trivia: LiveData<Trivia> = _trivia
-//val random: LiveData<RandomRecipe> = _random
+val random: LiveData<RandomRecipe> = _random
 
 //preload. first call
     init {
@@ -35,9 +36,10 @@ private val _trivia = MutableLiveData<Trivia>()
 //getRandomRecipe()
     }
 
-      private fun getFoodTrivia() {
+      fun getFoodTrivia() {
          viewModelScope.launch {
             _trivia.value = ChefApi.retrofitService.getTrivia()
+
          }
      }
      fun getChefPhotos(ingredient: String) {
@@ -51,11 +53,12 @@ private val _trivia = MutableLiveData<Trivia>()
             }
         }
     }
+     fun getRandomRecipe() {
+        viewModelScope.launch{
+            _random.value = ChefApi.retrofitService.getRandom()
+        }
+    }
 }
-   // private fun getRandomRecipe() {
-  //      viewModelScope.launch{
-   //         _random.value = ChefApi.retrofitService.getRandom()
-  //      }
- //   }
 
-  //  }
+
+

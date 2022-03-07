@@ -10,6 +10,9 @@ import android.widget.SearchView
 import androidx.fragment.app.viewModels
 import com.example.myapplication.databinding.FragmentRecipesBinding
 import com.example.myapplication.databinding.RecipeListBinding
+import com.google.mlkit.vision.barcode.BarcodeScannerOptions
+import com.google.mlkit.vision.barcode.common.Barcode
+import com.google.mlkit.vision.common.InputImage
 
 class RecipesFragment : Fragment() {
 
@@ -37,6 +40,14 @@ class RecipesFragment : Fragment() {
         })
         return binding.root
     }
+/*  Would code related to the camera go here instead? https://developers.google.com/ml-kit/vision/barcode-scanning/android
+    val options = BarcodeScannerOptions.Builder()
+        .setBarcodeFormats(
+            Barcode.FORMAT_UPC_A,
+            Barcode.FORMAT_UPC_E)
+        .build()
+
+         */
 
 
 

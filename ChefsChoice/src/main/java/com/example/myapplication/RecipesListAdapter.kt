@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.RecipeListBinding
 import com.example.myapplication.network.Recipes
+import com.example.myapplication.network.Trivia
 
 class RecipesListAdapter : ListAdapter<Recipes,
         RecipesListAdapter.RecipesViewHolder>(DiffCallback) {
@@ -18,6 +19,7 @@ class RecipesListAdapter : ListAdapter<Recipes,
             binding.photo = recipes
             binding.executePendingBindings()
         }
+
     }
     companion object DiffCallback : DiffUtil.ItemCallback<Recipes>() {
         override fun areItemsTheSame(oldItem: Recipes, newItem: Recipes): Boolean {

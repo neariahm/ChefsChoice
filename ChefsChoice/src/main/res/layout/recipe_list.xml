@@ -15,7 +15,9 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     app:cardBackgroundColor="@color/white"
-    app:cardElevation="8dp">
+    app:cardUseCompatPadding="true"
+    android:paddingLeft="10dp"
+    app:cardElevation="10dp">
 
 
 
@@ -25,6 +27,7 @@
 
         <CheckBox
             android:id="@+id/checkBox"
+            android:layout_alignBaseline="@id/textView_title"
             android:layout_width="34dp"
             android:layout_height="34dp"
             android:layout_alignParentTop="true"
@@ -39,7 +42,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="8dp"
             android:layout_marginTop="0dp"
-            android:ellipsize="marquee"
+            android:ellipsize="middle"
             android:marqueeRepeatLimit="marquee_forever"
             android:singleLine="true"
             android:text="Dish Name"

@@ -7,6 +7,10 @@
         <variable
             name="trivia"
             type="com.example.myapplication.network.Trivia" />
+        <variable
+            name="random"
+            type="com.example.myapplication.network.RandomRecipe" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,7 +23,7 @@
             android:id="@+id/feelingHungry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="72dp"
+            android:layout_marginTop="4dp"
             android:text="Feeling hungry?"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -40,56 +44,58 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/feelingHungry"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.375" />
 
         <ImageView
             android:id="@+id/recipeOfTheDay"
             android:layout_width="264dp"
             android:layout_height="220dp"
             android:layout_marginBottom="128dp"
-            android:src="@drawable/food3"
+            android:src="@drawable/placeholderrecipe"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/feelingHungry"
-            app:layout_constraintVertical_bias="0.633" />
+            app:layout_constraintVertical_bias="0.412"
+            app:imageUrl="@{random.image}"/>
 
         <TextView
             android:id="@+id/dishTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="19dp"
-            android:text="Dish Title"
+            android:text="Penne with Goat Cheese and Basil"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recipeOfTheDay"
-            app:layout_constraintVertical_bias="0.004" />
-
-        <TextView
-            android:id="@+id/didYouKnow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Did you know?"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.049"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.77" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/foodTrivia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Insert food trivia here"
+            android:text="Honey is the only food that will never rot, it can last 3000 years."
+            app:foodTrivia="@{trivia.text}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.057"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/didYouKnow"
-            app:layout_constraintVertical_bias="0.131" />
+            app:layout_constraintTop_toBottomOf="@+id/button2"
+            app:layout_constraintVertical_bias="0.493" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Did you Know? "
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dishTitle"
+            app:layout_constraintVertical_bias="0.111" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -16,11 +16,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".HomeFragment">
+        tools:context=".HomeFragment"
+        android:background="#E2A39B9B">
 
 
         <TextView
             android:id="@+id/feelingHungry"
+            android:textStyle="italic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -38,6 +40,7 @@
             android:text="Try the Recipe of the Day"
             android:textAlignment="center"
             android:textColor="@color/green"
+            android:textStyle="italic"
             android:textSize="40dp"
             app:layout_constraintBottom_toTopOf="@+id/recipeOfTheDay"
             app:layout_constraintEnd_toEndOf="parent"
@@ -65,6 +68,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="19dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
             android:text="Penne with Goat Cheese and Basil"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -79,6 +84,7 @@
             android:layout_height="wrap_content"
             android:text="Honey is the only food that will never rot, it can last 3000 years."
             app:foodTrivia="@{trivia.text}"
+            android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -92,6 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text="Did you Know? "
+            android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

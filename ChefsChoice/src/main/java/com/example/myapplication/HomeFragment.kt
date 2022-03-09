@@ -15,23 +15,25 @@ import com.example.myapplication.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
-    private val viewModel: RecipesViewModel by viewModels()
-
+    private val viewModel: PopularViewModel by viewModels()
+    private val viewModelTrivia: RecipesViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentHomeBinding.inflate(inflater)
         binding.lifecycleOwner = this
+        binding.viewModel = viewModel
+        binding.popularRecyclerView.adapter = PopularListAdapter()
 
         binding.button2.setOnClickListener {
-            binding.foodTrivia.text = viewModel.getFoodTrivia().toString()
+            binding.foodTrivia.text = viewModelTrivia.getFoodTrivia().toString()
 
         }
 
-            return binding.root
-        }
+        return binding.root
     }
+}
 
 
 

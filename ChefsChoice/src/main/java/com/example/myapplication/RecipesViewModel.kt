@@ -27,20 +27,20 @@ private val _random = MutableLiveData<RandomRecipe>()
 
     // The external immutable LiveData for the request status
     val status: LiveData<String> = _status
+
     val photos: LiveData<List<FavoriteEntity>> = _photos
       val trivia: LiveData<Trivia> = _trivia
 val random: LiveData<RandomRecipe> = _random
 
 //preload. first call
     init {
-          getFoodTrivia()
+         getFoodTrivia()
 
 //getRandomRecipe()
-    }
-
-      fun getFoodTrivia() {
-         viewModelScope.launch {
-            _trivia.value = ChefApi.retrofitService.getTrivia()
+ }
+     private fun getFoodTrivia() {
+        viewModelScope.launch {
+          _trivia.value = ChefApi.retrofitService.getTrivia()
 
          }
      }

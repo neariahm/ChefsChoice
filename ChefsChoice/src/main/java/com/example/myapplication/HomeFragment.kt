@@ -15,30 +15,32 @@ import com.example.myapplication.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
-    private val viewModel: RecipesViewModel by viewModels()
-
+    private val viewModel: PopularViewModel by viewModels()
+    private val viewModelTrivia: RecipesViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentHomeBinding.inflate(inflater)
         binding.lifecycleOwner = this
+        binding.viewModel = viewModel
+        binding.popularRecyclerView.adapter = PopularListAdapter()
 
         binding.button2.setOnClickListener {
-            binding.foodTrivia.text = viewModel.getFoodTrivia().toString()
-
+             viewModelTrivia.trivia.observe(viewLifecycleOwner){
+                 binding.foodTrivia.text = it.text
+             }
         }
 
-            return binding.root
-        }
+        return binding.root
     }
+}
 
 
 
 // Inflate the layout for this fragment
 // return inflater.inflate(R.layout.fragment_home, container, false)
-/* Get data from searchview & query the api to get the results
-
+/*
  viewModel.random.observe(viewLifecycleOwner) {
                 binding.recipeOfTheDay.load(
                     it?.image?.toUri()?.buildUpon()?.scheme("https")?.build()

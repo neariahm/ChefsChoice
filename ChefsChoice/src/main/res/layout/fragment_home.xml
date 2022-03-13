@@ -8,8 +8,8 @@
             name="trivia"
             type="com.example.myapplication.network.Trivia" />
         <variable
-            name="random"
-            type="com.example.myapplication.network.RandomRecipe" />
+            name="viewModel"
+            type="com.example.myapplication.PopularViewModel" />
 
     </data>
 
@@ -22,87 +22,78 @@
 
         <TextView
             android:id="@+id/feelingHungry"
-            android:textStyle="italic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Feeling hungry?"
+            android:layout_marginTop="44dp"
+            android:text="Finding your next meal is easy as pie"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="45dp"
+            android:textSize="23dp"
+            android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Try the Recipe of the Day"
-            android:textAlignment="center"
+            android:layout_marginTop="52dp"
+            android:text="Most Popular"
             android:textColor="@color/green"
+            android:textSize="20dp"
+
             android:textStyle="italic"
-            android:textSize="40dp"
-            app:layout_constraintBottom_toTopOf="@+id/recipeOfTheDay"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.047"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/feelingHungry"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/popularRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="15dp"
+            app:info="@{viewModel.photos}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/feelingHungry"
-            app:layout_constraintVertical_bias="0.375" />
-
-        <ImageView
-            android:id="@+id/recipeOfTheDay"
-            android:layout_width="264dp"
-            android:layout_height="220dp"
-            android:layout_marginBottom="128dp"
-            android:src="@drawable/placeholderrecipe"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/feelingHungry"
-            app:layout_constraintVertical_bias="0.412"
-            app:imageUrl="@{random.image}"/>
-
-        <TextView
-            android:id="@+id/dishTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="19dp"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:text="Penne with Goat Cheese and Basil"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipeOfTheDay"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.343"
+            tools:listitem="@layout/popular_list" />
 
         <TextView
             android:id="@+id/foodTrivia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Honey is the only food that will never rot, it can last 3000 years."
-            app:foodTrivia="@{trivia.text}"
             android:textStyle="italic"
+            app:foodTrivia="@{trivia.text}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.518"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button2"
-            app:layout_constraintVertical_bias="0.493" />
+            app:layout_constraintVertical_bias="0.238" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:layout_marginBottom="124dp"
             android:text="Did you Know? "
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dishTitle"
+            app:layout_constraintTop_toBottomOf="@+id/popularRecyclerView"
             app:layout_constraintVertical_bias="0.111" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

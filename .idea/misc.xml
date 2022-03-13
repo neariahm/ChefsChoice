@@ -3,13 +3,34 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        
-        <entry key="..\:/Users/willi/OneDrive/Documents/Google Andoid Fellowship/Android Studio Files/ChefsChoice/src/main/res/drawable/selector_favorites.xml" value="0.1835" />
-        <entry key="..\:/Users/willi/OneDrive/Documents/Google Andoid Fellowship/Android Studio Files/ChefsChoice/src/main/res/layout/fragment_favorites.xml" value="0.1" />
-        <entry key="..\:/Users/willi/OneDrive/Documents/Google Andoid Fellowship/Android Studio Files/ChefsChoice/src/main/res/layout/fragment_home.xml" value="0.1743659420289855" />
-        <entry key="..\:/Users/willi/OneDrive/Documents/Google Andoid Fellowship/Android Studio Files/ChefsChoice/src/main/res/layout/fragment_recipes.xml" value="0.10009057971014493" />
-        <entry key="..\:/Users/willi/OneDrive/Documents/Google Andoid Fellowship/Android Studio Files/ChefsChoice/src/main/res/layout/grid_items.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/willi/OneDrive/Documents/Google Andoid Fellowship/Android Studio Files/ChefsChoice/src/main/res/layout/recipe_list.xml" value="0.3" />
+
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/ChefsChoice/src/main/res/layout/activity_main.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/ChefsChoice/src/main/res/layout/activity_main2.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/ChefsChoice/src/main/res/layout/fragment_favorites.xml" value="0.12907608695652173" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/ChefsChoice/src/main/res/layout/fragment_home.xml" value="0.3" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/ChefsChoice/src/main/res/layout/fragment_recipes.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/ChefsChoice/src/main/res/layout/grid_items.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/ChefsChoice/src/main/res/layout/item_label.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/ChefsChoice/src/main/res/layout/popular_list.xml" value="0.25" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/ChefsChoice/src/main/res/layout/recipe_list.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/myapplication/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/myapplication/src/main/res/drawable/ic_camera.xml" value="0.1" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/myapplication/src/main/res/drawable/ic_favorite.xml" value="0.1" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/myapplication/src/main/res/drawable/ic_home.xml" value="0.1" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/myapplication/src/main/res/drawable/ic_info.xml" value="0.1" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/myapplication/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/myapplication/src/main/res/drawable/ic_recipes.xml" value="0.1" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/myapplication/src/main/res/drawable/splash_screen.xml" value="0.1" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/myapplication/src/main/res/layout/activity_main.xml" value="0.223731884057971" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/myapplication/src/main/res/layout/activity_main2.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/myapplication/src/main/res/layout/fragment_favorites.xml" value="0.15" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/myapplication/src/main/res/layout/fragment_home.xml" value="0.22333333333333336" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/myapplication/src/main/res/layout/fragment_info.xml" value="0.15" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/myapplication/src/main/res/layout/fragment_recipes.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/myapplication/src/main/res/layout/grid_items.xml" value="0.15534420289855072" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/myapplication/src/main/res/layout/item_label.xml" value="0.15" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/myapplication/src/main/res/layout/recipe_list.xml" value="0.1" />
+        <entry key="..\:/Users/neari/Downloads/ChefsChoice1/myapplication/src/main/res/menu/menu.xml" value="0.22695035460992907" />
 
 
       </map>

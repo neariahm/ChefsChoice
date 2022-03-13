@@ -1,5 +1,6 @@
 package com.example.myapplication.network
 
+import com.example.myapplication.database.FavoriteEntity
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -25,8 +26,9 @@ private const val BASE_URL = "https://api.spoonacular.com/"
         .build()
 
     interface ChefTestService {
-        @GET("recipes/findByIngredients?apiKey=16c7675b72404cf5b7dd4b41afb2d195&number=15&ranking=2")
-        suspend fun getPhotos(@Query("ingredients") ingredient: String): List<Recipes>
+
+        @GET("recipes/findByIngredients?apiKey=16c7675b72404cf5b7dd4b41afb2d195&number=15&ranking=1")
+        suspend fun getPhotos(@Query("ingredients") ingredient: String): List<FavoriteEntity>
 
         @GET("food/trivia/random?apiKey=16c7675b72404cf5b7dd4b41afb2d195")
         suspend fun getTrivia(): Trivia

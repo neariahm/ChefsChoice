@@ -9,8 +9,10 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+
 import com.example.myapplication.network.ComplexSearch
 import com.example.myapplication.network.ComplexSearchData
+import com.example.myapplication.database.FavoriteEntity
 import com.example.myapplication.network.Recipes
 import com.example.myapplication.network.Trivia
 //RecipesFragment
@@ -28,12 +30,20 @@ import com.example.myapplication.network.Trivia
 @BindingAdapter("listData")
     fun bindRecyclerView(
     recyclerView: RecyclerView,
-    data: List<Recipes>?,
+    data: List<FavoriteEntity>?,
 ) {
         val adapter = recyclerView.adapter as RecipesListAdapter
         adapter.submitList(data)
     }
 
+@BindingAdapter("Data")
+fun bindRecyclerView2(
+    recyclerView: RecyclerView,
+    data: List<FavoriteEntity>?,
+) {
+    val adapter = recyclerView.adapter as FavoriteAdapter
+    adapter.submitList(data)
+}
 @BindingAdapter("text")
 fun setText(view: TextView, text: String?) {
     view.text = text
@@ -63,3 +73,36 @@ fun bindRecyclerView2(recyclerView: RecyclerView,
 fun setTriviaText(view: TextView, text: String?) {
     view.text = text
 }
+
+
+@BindingAdapter("gridText")
+fun setGridText(view: TextView, text: String?) {
+    view.text = text
+}
+
+
+//}
+//@BindingAdapter("userInput")
+//fun setQuery(searchView: SearchView, query: String){
+ //   searchView.toString() = query
+  //  notifyPropertyChanged(viewModel.query)
+//}
+
+//fun setupSearchView(view: SearchView, userInput: String?): Boolean {
+ // view.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+      //Triggered when the search is passed
+     //  override fun onQueryTextSubmit(query: String?): Boolean {
+      //    RecipesViewModel.getChefRecipes()
+          // view.clearFocus()
+         //  view.setQuery("", false)
+      //    return true
+     //  }
+//Called when the user types each character in the text field
+     //  override fun onQueryTextChange(newText: String?): Boolean {
+     //    return false
+     //  }
+  // })
+  // return true
+  // } */
+
+

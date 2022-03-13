@@ -8,6 +8,7 @@ import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.example.myapplication.database.FavoriteEntity
 import com.example.myapplication.network.Recipes
 import com.example.myapplication.network.Trivia
 
@@ -25,12 +26,20 @@ import com.example.myapplication.network.Trivia
 @BindingAdapter("listData")
     fun bindRecyclerView(
     recyclerView: RecyclerView,
-    data: List<Recipes>?,
+    data: List<FavoriteEntity>?,
 ) {
         val adapter = recyclerView.adapter as RecipesListAdapter
         adapter.submitList(data)
     }
 
+@BindingAdapter("Data")
+fun bindRecyclerView2(
+    recyclerView: RecyclerView,
+    data: List<FavoriteEntity>?,
+) {
+    val adapter = recyclerView.adapter as FavoriteAdapter
+    adapter.submitList(data)
+}
 @BindingAdapter("text")
 fun setText(view: TextView, text: String?) {
     view.text = text
@@ -40,7 +49,10 @@ fun setText(view: TextView, text: String?) {
 fun setTriviaText(view: TextView, text: String?) {
     view.text = text
 }
-
+@BindingAdapter("gridText")
+fun setGridText(view: TextView, text: String?) {
+    view.text = text
+}
 
 
 //}

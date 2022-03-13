@@ -7,6 +7,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.myapplication.database.FavoriteDao
+import com.example.myapplication.database.FavoriteEntity
 import com.example.myapplication.network.ChefApi
 import com.example.myapplication.network.RandomRecipe
 import com.example.myapplication.network.Recipes
@@ -14,18 +16,18 @@ import com.example.myapplication.network.Trivia
 import kotlinx.coroutines.launch
 
 // RecipesViewModel is attached to the RecipesFragment
-class RecipesViewModel : ViewModel() {
+class RecipesViewModel(val favoriteDao: FavoriteDao) : ViewModel() {
 
     // The internal MutableLiveData that stores the status of the most recent request
     private val _status = MutableLiveData<String>()
-    private val _photos = MutableLiveData<List<Recipes>>()
+    private val _photos = MutableLiveData<List<FavoriteEntity>>()
 private val _trivia = MutableLiveData<Trivia>()
 private val _random = MutableLiveData<RandomRecipe>()
 
 
     // The external immutable LiveData for the request status
     val status: LiveData<String> = _status
-    val photos: LiveData<List<Recipes>> = _photos
+    val photos: LiveData<List<FavoriteEntity>> = _photos
       val trivia: LiveData<Trivia> = _trivia
 val random: LiveData<RandomRecipe> = _random
 
@@ -57,6 +59,9 @@ val random: LiveData<RandomRecipe> = _random
         viewModelScope.launch{
             _random.value = ChefApi.retrofitService.getRandom()
         }
+    }
+    suspend fun insert(favoriteEntity: FavoriteEntity){
+        favoriteDao.insert(favoriteEntity)
     }
 }
 

@@ -27,6 +27,7 @@ class RecipesFragment : Fragment() {
         binding.viewModel = viewModel
         binding.recyclerView.adapter = RecipesListAdapter()
 
+        //Get user input from searchview & query the api to get the results
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
             Log.i("Neariah", query)

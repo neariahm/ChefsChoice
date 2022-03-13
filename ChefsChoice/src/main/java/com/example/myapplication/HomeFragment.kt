@@ -27,8 +27,9 @@ class HomeFragment : Fragment() {
         binding.popularRecyclerView.adapter = PopularListAdapter()
 
         binding.button2.setOnClickListener {
-            binding.foodTrivia.text = viewModelTrivia.getFoodTrivia().toString()
-
+             viewModelTrivia.trivia.observe(viewLifecycleOwner){
+                 binding.foodTrivia.text = it.text
+             }
         }
 
         return binding.root
@@ -39,8 +40,7 @@ class HomeFragment : Fragment() {
 
 // Inflate the layout for this fragment
 // return inflater.inflate(R.layout.fragment_home, container, false)
-/* Get data from searchview & query the api to get the results
-
+/*
  viewModel.random.observe(viewLifecycleOwner) {
                 binding.recipeOfTheDay.load(
                     it?.image?.toUri()?.buildUpon()?.scheme("https")?.build()

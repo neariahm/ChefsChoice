@@ -13,7 +13,7 @@ import com.example.myapplication.network.ComplexSearch
 import com.example.myapplication.network.ComplexSearchData
 import com.example.myapplication.network.Recipes
 import com.example.myapplication.network.Trivia
-
+//RecipesFragment
 @BindingAdapter("imageUrl")
     fun bindImage(imgView: ImageView, imgUrl: String?) {
         imgUrl?.let {
@@ -39,6 +39,7 @@ fun setText(view: TextView, text: String?) {
     view.text = text
 }
 
+//Home Fragment
 @BindingAdapter("image")
 fun bindImage2(imgView: ImageView, imgUrl: String?) {
     imgUrl?.let {
@@ -58,40 +59,7 @@ fun bindRecyclerView2(recyclerView: RecyclerView,
     adapter.submitList(data)
 }
 
-    //  val adapter = recyclerView.adapter as PopularListAdapter
-
-//}
-
-
 @BindingAdapter("foodTrivia")
 fun setTriviaText(view: TextView, text: String?) {
     view.text = text
 }
-
-
-
-
-//}
-//@BindingAdapter("userInput")
-//fun setQuery(searchView: SearchView, query: String){
- //   searchView.toString() = query
-  //  notifyPropertyChanged(viewModel.query)
-//}
-
-//fun setupSearchView(view: SearchView, userInput: String?): Boolean {
- // view.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
-      //Triggered when the search is passed
-     //  override fun onQueryTextSubmit(query: String?): Boolean {
-      //    RecipesViewModel.getChefRecipes()
-          // view.clearFocus()
-         //  view.setQuery("", false)
-      //    return true
-     //  }
-//Called when the user types each character in the text field
-     //  override fun onQueryTextChange(newText: String?): Boolean {
-     //    return false
-     //  }
-  // })
-  // return true
-  // } */
-

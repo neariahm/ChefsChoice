@@ -44,10 +44,12 @@
             android:textSize="20dp"
 
             android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.037"
+            app:layout_constraintHorizontal_bias="0.047"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/feelingHungry" />
+            app:layout_constraintTop_toBottomOf="@id/feelingHungry"
+            app:layout_constraintVertical_bias="0.0" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/popularRecyclerView"
@@ -55,28 +57,29 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingTop="15dp"
+            app:info="@{viewModel.photos}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:listitem="@layout/popular_list"
-            app:info="@{viewModel.photos}"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.343"
+            tools:listitem="@layout/popular_list" />
 
         <TextView
             android:id="@+id/foodTrivia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Honey is the only food that will never rot, it can last 3000 years."
-            app:foodTrivia="@{trivia.text}"
             android:textStyle="italic"
+            app:foodTrivia="@{trivia.text}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.518"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button2"
-            app:layout_constraintVertical_bias="0.493" />
+            app:layout_constraintVertical_bias="0.238" />
 
         <Button
             android:id="@+id/button2"

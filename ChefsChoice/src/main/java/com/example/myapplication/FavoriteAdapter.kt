@@ -34,7 +34,7 @@ class FavoriteAdapter : ListAdapter <FavoriteEntity, FavoriteAdapter.FavoriteVie
             }
 
             override fun areContentsTheSame(oldItem: FavoriteEntity, newItem: FavoriteEntity): Boolean {
-                return oldItem.title == newItem.title
+                return oldItem == newItem
             }
 
         }

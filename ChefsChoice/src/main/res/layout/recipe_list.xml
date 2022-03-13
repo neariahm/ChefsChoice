@@ -6,7 +6,7 @@
     <data>
         <variable
             name="photo"
-            type="com.example.myapplication.network.Recipes" />
+            type="com.example.myapplication.database.FavoriteEntity" />
     </data>
 
 

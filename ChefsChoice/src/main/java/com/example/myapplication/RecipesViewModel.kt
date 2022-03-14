@@ -21,7 +21,6 @@ class RecipesViewModel(val favoriteDao: FavoriteDao) : ViewModel() {
     // The internal MutableLiveData that stores the status of the most recent request
     private val _status = MutableLiveData<String>()
     private val _photos = MutableLiveData<List<FavoriteEntity>>()
-private val _trivia = MutableLiveData<Trivia>()
 private val _random = MutableLiveData<RandomRecipe>()
 
 
@@ -29,21 +28,13 @@ private val _random = MutableLiveData<RandomRecipe>()
     val status: LiveData<String> = _status
 
     val photos: LiveData<List<FavoriteEntity>> = _photos
-      val trivia: LiveData<Trivia> = _trivia
 val random: LiveData<RandomRecipe> = _random
 
 //preload. first call
-    init {
-         getFoodTrivia()
+  //  init {
+        //getRandomRecipe()
+ //}
 
-//getRandomRecipe()
- }
-     private fun getFoodTrivia() {
-        viewModelScope.launch {
-          _trivia.value = ChefApi.retrofitService.getTrivia()
-
-         }
-     }
      fun getChefPhotos(ingredient: String) {
 
         viewModelScope.launch {

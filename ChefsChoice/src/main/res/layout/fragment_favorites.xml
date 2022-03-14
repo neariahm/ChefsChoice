@@ -68,7 +68,6 @@
                 android:columnCount="3" />
 
             <androidx.recyclerview.widget.RecyclerView
-                app:Data="@{viewModel.photos}"
                 android:id="@+id/recycler_view"
                 android:layout_width="410dp"
                 android:layout_height="540dp"

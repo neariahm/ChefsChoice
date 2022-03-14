@@ -16,7 +16,6 @@ import com.example.myapplication.databinding.FragmentHomeBinding
 class HomeFragment : Fragment() {
 
     private val viewModel: PopularViewModel by viewModels()
-    private val viewModelTrivia: RecipesViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,7 +26,7 @@ class HomeFragment : Fragment() {
         binding.popularRecyclerView.adapter = PopularListAdapter()
 
         binding.button2.setOnClickListener {
-             viewModelTrivia.trivia.observe(viewLifecycleOwner){
+             viewModel.trivia.observe(viewLifecycleOwner){
                  binding.foodTrivia.text = it.text
              }
         }

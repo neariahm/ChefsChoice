@@ -1,51 +1,25 @@
 package com.example.myapplication
 
-import android.app.Activity
-import android.content.ActivityNotFoundException
-import android.content.Context.CAMERA_SERVICE
-import android.content.Intent
-import android.graphics.Bitmap
-import android.hardware.camera2.CameraCharacteristics
-import android.hardware.camera2.CameraManager
+
 import android.os.Bundle
-import android.provider.MediaStore
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
+
 import android.widget.SearchView
 
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.GridLayoutManager
+
 import com.example.myapplication.database.RecipesApplication
 import com.example.myapplication.databinding.FragmentRecipesBinding
-import com.example.myapplication.databinding.RecipeListBinding
+
 import com.example.myapplication.viewmodel.RecipesViewModelFactory
 import com.google.android.material.snackbar.Snackbar
-
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil.setContentView
-import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.databinding.FragmentRecipesBinding
-import com.example.myapplication.databinding.RecipeListBinding
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-
-import com.google.mlkit.vision.barcode.BarcodeScannerOptions
-import com.google.mlkit.vision.barcode.BarcodeScanning
-import com.google.mlkit.vision.barcode.common.Barcode
-import com.google.mlkit.vision.common.InputImage
-
 import kotlinx.coroutines.launch
 
-import com.google.mlkit.vision.label.ImageLabeling
-import com.google.mlkit.vision.label.defaults.ImageLabelerOptions
 
 
 class RecipesFragment : Fragment() {

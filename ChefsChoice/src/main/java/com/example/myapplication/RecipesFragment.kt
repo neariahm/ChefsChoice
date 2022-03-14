@@ -24,6 +24,7 @@ import kotlinx.coroutines.launch
 
 class RecipesFragment : Fragment() {
     val adapter = RecipesListAdapter()
+
     private val viewModel: RecipesViewModel by activityViewModels() {
         RecipesViewModelFactory((activity?.application as RecipesApplication).database.favoriteDao())
     }

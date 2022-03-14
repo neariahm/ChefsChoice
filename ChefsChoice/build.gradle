@@ -83,6 +83,8 @@ dependencies {
     // Use this dependency to bundle the model with your app
     implementation 'com.google.mlkit:barcode-scanning:17.0.2'
 
+    //Barcode Scanning
+    implementation 'com.google.android.gms:play-services-vision:20.1.3'
 
 // Room
     def roomVersion = "2.4.2"

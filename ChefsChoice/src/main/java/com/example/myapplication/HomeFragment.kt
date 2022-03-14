@@ -28,6 +28,7 @@ class HomeFragment : Fragment() {
         binding.button2.setOnClickListener {
              viewModel.trivia.observe(viewLifecycleOwner){
                  binding.foodTrivia.text = it.text
+                 Log.i("Neariah", "Button clicked.")
              }
         }
 

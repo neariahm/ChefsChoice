@@ -3,17 +3,17 @@
     package="com.example.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
+
     <uses-feature
         android:name="android.software.leanback"
         android:required="false" />
 
     <application
-        android:name = "com.example.myapplication.database.RecipesApplication"
-
+        android:name=".database.RecipesApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -21,17 +21,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChefsChoice">
         <activity
-            android:name=".Cardview1"
+            android:name=".MainActivity3"
             android:exported="false" />
-        <activity
-            android:name=".MainActivityMLK"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity2"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".SplashScreen"
             android:exported="true"

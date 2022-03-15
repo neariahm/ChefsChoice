@@ -40,8 +40,11 @@ private const val BASE_URL = "https://api.spoonacular.com/"
         suspend fun getRecipe() : RecipeCard
 
         @GET("recipes/findByIngredients?apiKey=16c7675b72404cf5b7dd4b41afb2d195&ingredients=beef&number=7&ranking=2&sort=popularity")
-       // @GET("recipes/complexSearch?apiKey=16c7675b72404cf5b7dd4b41afb2d195&cuisine=american&sort=popularity&number=10")
+     //   @GET("recipes/complexSearch?apiKey=16c7675b72404cf5b7dd4b41afb2d195&cuisine=american&sort=popularity&number=10")
         suspend fun getPopular() : List<ComplexSearchData>
+
+        @GET("food/products/upc/")
+        suspend fun getBarcode(@Query("upc") upc: String): Upc
     }
     object ChefApi {
         val retrofitService : ChefTestService by lazy {

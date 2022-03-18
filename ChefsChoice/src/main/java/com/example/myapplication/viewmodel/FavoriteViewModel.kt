@@ -1,5 +1,6 @@
 package com.example.myapplication.viewmodel
 
+import android.content.ClipData
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.example.myapplication.database.FavoriteDao
@@ -10,5 +11,8 @@ import kotlinx.coroutines.flow.Flow
 class FavoriteViewModel(private val favoriteDao: FavoriteDao):ViewModel() {
 
    fun showFavorites(): Flow<List<FavoriteEntity>> = favoriteDao.getAll()
+   suspend fun deleteFavorite(favoriteEntity: FavoriteEntity){
+      favoriteDao.delete(favoriteEntity)
+   }
 
 }

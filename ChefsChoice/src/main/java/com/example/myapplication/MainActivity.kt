@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
@@ -33,13 +34,13 @@ class MainActivity : AppCompatActivity() {
         signUpBtn = findViewById(R.id.signup_btn)
 
         signUpBtn.setOnClickListener{
-            var email: String = emailEt.text.toString()
-            var password: String = passwordEt.text.toString()
+            val email: String = emailEt.text.toString()
+            val password: String = passwordEt.text.toString()
 
             if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
                 Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_LONG).show()
             } else{
-                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, OnCompleteListener{ task ->
+                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this,OnCompleteListener{ task ->
                     if(task.isSuccessful){
                         Toast.makeText(this, "Successfully Registered", Toast.LENGTH_LONG).show()
                         val intent = Intent(this, MainActivity2::class.java)
@@ -59,8 +60,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         loginBtn.setOnClickListener {
-            var email: String = emailEt.text.toString()
-            var password: String = passwordEt.text.toString()
+            val email: String = emailEt.text.toString()
+            val password: String = passwordEt.text.toString()
 
             if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
                 Toast.makeText(this@MainActivity, "Please fill all the fields", Toast.LENGTH_LONG).show()
@@ -78,8 +79,16 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        val skipSignUp = findViewById<TextView>(R.id.tV2)
+        skipSignUp.setOnClickListener {
+            val intent = Intent(this, MainActivity2::class.java)
+            startActivity(intent)
+            finish()
         }
 
-    }
+        }
+
+
+        }
 
 

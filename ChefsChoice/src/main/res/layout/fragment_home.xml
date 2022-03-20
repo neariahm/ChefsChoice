@@ -24,7 +24,7 @@
             android:id="@+id/feelingHungry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="72dp"
             android:text="Finding your next meal is easy as pie"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -64,7 +64,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.345"
+            app:layout_constraintVertical_bias="0.456"
             tools:listitem="@layout/popular_list" />
 
         <TextView
@@ -95,5 +95,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/popularRecyclerView"
             app:layout_constraintVertical_bias="0.111" />
+
+        <Button
+            android:id="@+id/signOut_Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Out"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.052"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.008" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -92,4 +92,17 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tV2"
+        android:layout_width="229dp"
+        android:layout_height="28dp"
+        android:text="Don't Want To Sign Up? Click Here!"
+        android:textColor="#FBF9F9"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.903" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

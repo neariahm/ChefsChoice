@@ -28,6 +28,8 @@ class HomeFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
         binding.popularRecyclerView.adapter = PopularListAdapter()
+        binding.dessertRecyclerView.adapter = PopularListAdapter()
+        binding.quickRecyclerView.adapter = PopularListAdapter()
 
         binding.button2.setOnClickListener {
             viewModel.trivia.observe(viewLifecycleOwner) {

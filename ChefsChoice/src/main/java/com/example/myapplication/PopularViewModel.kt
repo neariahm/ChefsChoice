@@ -13,17 +13,23 @@ class PopularViewModel: ViewModel() {
     // The internal MutableLiveData that stores the status of the most recent request
     private val _photos = MutableLiveData<ComplexSearch>()
     private val _trivia = MutableLiveData<Trivia>()
+    private val _dessert = MutableLiveData<ComplexSearch>()
+    private val _quick = MutableLiveData<ComplexSearch>()
 
 
     // The external immutable LiveData for the request status
     val photos: LiveData<ComplexSearch> = _photos
     val trivia: LiveData<Trivia> = _trivia
+    val dessert : LiveData<ComplexSearch> = _dessert
+    val quick: LiveData<ComplexSearch> = _quick
 
 
     //preload. first call
     init {
         getPopularRecipes()
         getFoodTrivia()
+        getDessertRecipes()
+        getQuickRecipes()
     }
 
      private fun getPopularRecipes() {
@@ -31,7 +37,18 @@ class PopularViewModel: ViewModel() {
           _photos.value = ChefApi.retrofitService.getPopular()
 
             }
+        }
 
+    private fun getQuickRecipes() {
+        viewModelScope.launch {
+            _quick.value = ChefApi.retrofitService.getQuick()
+
+        }
+    }
+    private fun getDessertRecipes() {
+        viewModelScope.launch {
+            _dessert.value = ChefApi.retrofitService.getDessert()
+        }
         }
     private fun getFoodTrivia() {
         viewModelScope.launch {

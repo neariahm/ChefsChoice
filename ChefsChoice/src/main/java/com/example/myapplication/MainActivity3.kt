@@ -111,18 +111,19 @@ class MainActivity3 : AppCompatActivity() {
 
 
                   viewModel.getFoodBarcode(scannedValue).toString()
+                    Log.i("Neariah", " Scanned Value #1: $scannedValue")
+
 
                     //Should not use value outside of viewmodel bc it doesnt get LiveData aka it updates irregularly
                     var product = viewModel.barcode.value?.title
-                    var message = viewModel.barcode.value?.generatedText
+                    Log.i("Neariah", " Product #1: $product")
 
-                //    findViewById<TextView>(R.id.textView2).text = info.toString()
+                    var message = viewModel.barcode.value?.generatedText
+                    Log.i("Neariah", " Message Value #1: $message")
 
                     runOnUiThread {
                         cameraSource.stop()
-                        // when button is clicked, show the alert
-                        //  btnShowAlert.setOnClickListener {
-                        // build alert dialog
+
                         val dialogBuilder = AlertDialog.Builder(this@MainActivity3)
                         if (message == null){
                             dialogBuilder.setMessage("No description provided.")
@@ -132,7 +133,6 @@ class MainActivity3 : AppCompatActivity() {
                                 // if the dialog is cancelable
                                 .setCancelable(false)
                         }
-
                             // positive button text and action
                             //  .setPositiveButton("Scan Again", DialogInterface.OnClickListener {
                             //          dialog, id -> finish()
@@ -141,6 +141,8 @@ class MainActivity3 : AppCompatActivity() {
                             .setNegativeButton("Close",
                                 DialogInterface.OnClickListener { dialog, id ->
                                     dialog.cancel()
+                               //Added to return to RecipesFragment
+                                    finish()
                                 })
 
                         // create dialog box
@@ -149,25 +151,25 @@ class MainActivity3 : AppCompatActivity() {
                         alert.setTitle("$product")
                         // show alert dialog
                         alert.show()
+
                     }
                 }
 
-                /*   Toast.makeText(this@MainActivity3,
+                /* Show scannedvalue in text
+                Toast.makeText(this@MainActivity3,
                             "value- $info",
                             Toast.LENGTH_LONG).show()
-                        finish()*/
+                        finish()
                 //Don't forget to add this line printing value or finishing activity must run on main thread
-                /* runOnUiThread {
+                 runOnUiThread {
                         cameraSource.stop()
                         Toast.makeText(this@MainActivity3,
                             "value- $scannedValue",
                             Toast.LENGTH_SHORT).show()
-                        finish() */
-
-
-                //          }
-                //      } else {
-                //         Toast.makeText(this@MainActivity3, "value- else", Toast.LENGTH_SHORT).show()
+                        finish()
+                         }
+                    } else {
+                    Toast.makeText(this@MainActivity3, "value- else", Toast.LENGTH_SHORT).show()*/
 
             }
 

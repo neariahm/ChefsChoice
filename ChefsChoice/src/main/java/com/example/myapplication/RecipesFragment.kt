@@ -39,12 +39,11 @@ class RecipesFragment : Fragment() {
 
         //Get user input from searchview & query the api to get the results
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String): Boolean {
+            override fun onQueryTextSubmit( query: String): Boolean {
                 Log.i("Neariah", query)
                 viewModel.getChefPhotos(query)
                 return true
             }
-
             override fun onQueryTextChange(s: String?): Boolean {
                 return false
             }
@@ -61,8 +60,8 @@ class RecipesFragment : Fragment() {
             val intent = Intent(activity, MainActivity3::class.java)
              activity?.startActivity(intent)
         }
-        val strtext = getArguments()?.getString("barcode")
-        binding.textView2.text = strtext
+  //      val strtext = getArguments()?.getString("barcode")
+     //   binding.textView2.text = strtext
 
         return binding.root
     }

@@ -1,6 +1,7 @@
 package com.example.myapplication.network
 
 import com.example.myapplication.database.FavoriteEntity
+import com.google.android.gms.common.internal.safeparcel.SafeParcelable
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -8,6 +9,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 private const val BASE_URL = "https://api.spoonacular.com/"
@@ -27,24 +29,24 @@ private const val BASE_URL = "https://api.spoonacular.com/"
 
     interface ChefTestService {
 
-        @GET("recipes/findByIngredients?apiKey=1f7fa56b77034386a7f0391c4f9327e1&number=15&ranking=1")
+        @GET("recipes/findByIngredients?apiKey=16c7675b72404cf5b7dd4b41afb2d195&number=15&ranking=2")
         suspend fun getPhotos(@Query("ingredients") ingredient: String): List<FavoriteEntity>
 
-        @GET("food/trivia/random?apiKey=1f7fa56b77034386a7f0391c4f9327e1")
+        @GET("food/trivia/random?apiKey=16c7675b72404cf5b7dd4b41afb2d195")
         suspend fun getTrivia(): Trivia
 
-        @GET("random?apiKey=1f7fa56b77034386a7f0391c4f9327e1&number=1")
+        @GET("random?apiKey=16c7675b72404cf5b7dd4b41afb2d195")
         suspend fun getRandom(): RandomRecipe
 
-        @GET("recipes/{id}/card?apiKey=1f7fa56b77034386a7f0391c4f9327e1&mask=potMask")
-        suspend fun getRecipe() : RecipeCard
+        @GET("recipes/{id}/card?apiKey=16c7675b72404cf5b7dd4b41afb2d195")
+        suspend fun getRecipe(@Path("id") recipeId: String) : RecipeCard
 
-        @GET("recipes/findByIngredients?apiKey=1f7fa56b77034386a7f0391c4f9327e1&ingredients=beef&number=7&ranking=2&sort=popularity")
+        @GET("recipes/findByIngredients?apiKey=16c7675b72404cf5b7dd4b41afb2d195&ingredients=beef&number=3&ranking=2&sort=popularity")
      //   @GET("recipes/complexSearch?apiKey=16c7675b72404cf5b7dd4b41afb2d195&cuisine=american&sort=popularity&number=10")
         suspend fun getPopular() : List<ComplexSearchData>
 
-        @GET("food/products/upc/")
-        suspend fun getBarcode(@Query("upc") upc: String): Upc
+        @GET("food/products/upc/{upc}/?apiKey=16c7675b72404cf5b7dd4b41afb2d195")
+        suspend fun getBarcode(@Path("upc") upc: String): Upc
     }
     object ChefApi {
         val retrofitService : ChefTestService by lazy {

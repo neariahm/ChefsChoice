@@ -1,5 +1,7 @@
 package com.example.myapplication
 
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,6 +46,14 @@ class FavoriteAdapter : ListAdapter <FavoriteEntity, FavoriteAdapter.FavoriteVie
                 }
             }
         }
+
+        holder.itemView.setOnClickListener{ v ->
+            val intent = Intent( v.context, MainActivity4::class.java)
+            intent.putExtra("id", recipe.id.toString())
+            v.context.startActivity(intent)
+            Log.i("Neariah", "Card clicked: " + recipe.id)
+        }
+
     }
     companion object {
         private val DiffCallback = object : DiffUtil.ItemCallback<FavoriteEntity>() {

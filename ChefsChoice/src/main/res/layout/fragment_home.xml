@@ -10,6 +10,9 @@
         <variable
             name="viewModel"
             type="com.example.myapplication.PopularViewModel" />
+        <variable
+            name="data"
+            type="com.example.myapplication.network.ComplexSearch" />
 
     </data>
 
@@ -57,7 +60,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingTop="15dp"
-            app:info="@{viewModel.photos}"
+            app:info="@{viewModel.photos.results}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

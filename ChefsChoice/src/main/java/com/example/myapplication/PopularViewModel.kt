@@ -11,12 +11,12 @@ import kotlinx.coroutines.launch
 class PopularViewModel: ViewModel() {
 
     // The internal MutableLiveData that stores the status of the most recent request
-    private val _photos = MutableLiveData<List<ComplexSearchData>>()
+    private val _photos = MutableLiveData<ComplexSearch>()
     private val _trivia = MutableLiveData<Trivia>()
 
 
     // The external immutable LiveData for the request status
-    val photos: LiveData<List<ComplexSearchData>> = _photos
+    val photos: LiveData<ComplexSearch> = _photos
     val trivia: LiveData<Trivia> = _trivia
 
 

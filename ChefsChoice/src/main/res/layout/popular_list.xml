@@ -9,6 +9,7 @@
     </data>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/homeCard"
         android:layout_width="205dp"
         android:layout_height="225dp"
         android:layout_margin="10dp"

@@ -1,5 +1,8 @@
 package com.example.myapplication
 
+import android.content.Intent
+import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -46,5 +49,15 @@ class PopularListAdapter : ListAdapter<ComplexSearchData, PopularListAdapter.Pop
     override fun onBindViewHolder(holder: PopularViewHolder, position: Int) {
         val complexSearch = getItem(position)
         holder.bind(complexSearch)
+
+        holder.itemView.setOnClickListener{ v ->
+            val intent = Intent( v.context, MainActivity4::class.java)
+            intent.putExtra("id", complexSearch.id.toString())
+            v.context.startActivity(intent)
+            Log.i("Neariah", "Card clicked: " + complexSearch.id)
+        }
+
+
+
     }
 }

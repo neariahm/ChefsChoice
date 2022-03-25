@@ -48,13 +48,4 @@ class HomeFragment : Fragment() {
 }
 
 
-// Inflate the layout for this fragment
-// return inflater.inflate(R.layout.fragment_home, container, false)
-/*
- viewModel.random.observe(viewLifecycleOwner) {
-                binding.recipeOfTheDay.load(
-                    it?.image?.toUri()?.buildUpon()?.scheme("https")?.build()
-                )
-                viewModel.getRandomRecipe()
 
- */

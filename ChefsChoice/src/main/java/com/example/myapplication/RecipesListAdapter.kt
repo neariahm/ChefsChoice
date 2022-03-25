@@ -1,5 +1,8 @@
 package com.example.myapplication
 
+import android.content.Intent
+import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -73,8 +76,20 @@ class RecipesListAdapter : ListAdapter<FavoriteEntity, RecipesListAdapter.Recipe
             }
         }
 
+        // When card is clicked, Extract the id to launch a new activity with recipe card (explicit intent)
+    holder.itemView.setOnClickListener{ v ->
+         val intent = Intent( v.context, MainActivity4::class.java)
+         intent.putExtra("id", recipe.id.toString())
+         v.context.startActivity(intent)
+         Log.i("Neariah", "Card clicked: " + recipe.id)
+     }
 
-        // When card is clicked, Extract the id to launch a new fragment
+        //Implicit intent
+      /*  holder.itemView.setOnClickListener { v ->
+            val queryUrl: Uri = Uri.parse("${MainActivity4.SEARCH_PREFIX}${recipe.id}")
+            val intent = Intent(Intent.ACTION_VIEW, queryUrl)
+            v.context.startActivity(intent)
+        } */
     }
 
     private var onSaveClick: ((FavoriteEntity) -> Unit)? = null
@@ -83,4 +98,6 @@ class RecipesListAdapter : ListAdapter<FavoriteEntity, RecipesListAdapter.Recipe
         onSaveClick = listener
 
     }
+
+
 }

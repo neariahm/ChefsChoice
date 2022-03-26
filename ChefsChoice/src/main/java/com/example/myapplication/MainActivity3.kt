@@ -16,6 +16,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
 import com.example.myapplication.database.RecipesApplication
 import com.example.myapplication.databinding.ActivityMain3Binding
 import com.example.myapplication.viewmodel.RecipesViewModelFactory
@@ -23,6 +24,7 @@ import com.google.android.gms.vision.CameraSource
 import com.google.android.gms.vision.Detector
 import com.google.android.gms.vision.barcode.Barcode
 import com.google.android.gms.vision.barcode.BarcodeDetector
+import kotlinx.coroutines.launch
 import java.io.IOException
 
 class MainActivity3 : AppCompatActivity() {
@@ -55,6 +57,9 @@ class MainActivity3 : AppCompatActivity() {
         val aniSlide: Animation =
             AnimationUtils.loadAnimation(this@MainActivity3, R.anim.scanner_animation)
         binding.barcodeLine.startAnimation(aniSlide)
+
+        //Add observer
+
     }
 
 
@@ -113,46 +118,56 @@ class MainActivity3 : AppCompatActivity() {
                   viewModel.getFoodBarcode(scannedValue).toString()
                     Log.i("Neariah", " Scanned Value #1: $scannedValue")
 
+                    lifecycleScope.launch {
+                        viewModel.barcode.observe(this@MainActivity3){
+                            var product = it.title
+                            var message = it.generatedText
+
+                            //runOnUiThread {
+                            cameraSource.stop()
+
+                            val dialogBuilder = AlertDialog.Builder(this@MainActivity3)
+                            if (message == null){
+                                dialogBuilder.setMessage("No description provided.")
+                            } else {
+                                // set message of alert dialog
+                                dialogBuilder.setMessage("$message")
+                                    // if the dialog is cancelable
+                                    .setCancelable(false)
+                            }
+                                // positive button text and action
+                                //  .setPositiveButton("Scan Again", DialogInterface.OnClickListener {
+                                //          dialog, id -> finish()
+                                //  })
+                                // negative button text and action
+                                .setNegativeButton("Close",
+                                    DialogInterface.OnClickListener { dialog, id ->
+                                        dialog.cancel()
+                                        //Added to return to RecipesFragment
+                                        finish()
+                                    })
+
+                            // create dialog box
+                            val alert = dialogBuilder.create()
+                            // set title for alert dialog box
+                            alert.setTitle("$product")
+                            // show alert dialog
+                            alert.show()
+
+                        }
+                        //  }
+                    }
+
 
                     //Should not use value outside of viewmodel bc it doesnt get LiveData aka it updates irregularly
-                    var product = viewModel.barcode.value?.title
-                    Log.i("Neariah", " Product #1: $product")
+                   // var product = viewModel.barcode.value?.title
+                   // Log.i("Neariah", " Product #1: $product")
 
-                    var message = viewModel.barcode.value?.generatedText
-                    Log.i("Neariah", " Message Value #1: $message")
+                   // var message = viewModel.barcode.value?.generatedText
+                  //  Log.i("Neariah", " Message Value #1: $message")
 
-                    runOnUiThread {
-                        cameraSource.stop()
 
-                        val dialogBuilder = AlertDialog.Builder(this@MainActivity3)
-                        if (message == null){
-                            dialogBuilder.setMessage("No description provided.")
-                        } else {
-                            // set message of alert dialog
-                            dialogBuilder.setMessage("$message")
-                                // if the dialog is cancelable
-                                .setCancelable(false)
-                        }
-                            // positive button text and action
-                            //  .setPositiveButton("Scan Again", DialogInterface.OnClickListener {
-                            //          dialog, id -> finish()
-                            //  })
-                            // negative button text and action
-                            .setNegativeButton("Close",
-                                DialogInterface.OnClickListener { dialog, id ->
-                                    dialog.cancel()
-                               //Added to return to RecipesFragment
-                                    finish()
-                                })
 
-                        // create dialog box
-                        val alert = dialogBuilder.create()
-                        // set title for alert dialog box
-                        alert.setTitle("$product")
-                        // show alert dialog
-                        alert.show()
-
-                    }
                 }
 
                 /* Show scannedvalue in text

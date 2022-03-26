@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.leanback.widget.DiffCallback
 import androidx.recyclerview.widget.AsyncListDiffer
@@ -82,6 +83,7 @@ class RecipesListAdapter : ListAdapter<FavoriteEntity, RecipesListAdapter.Recipe
          v.context.startActivity(intent)
          Log.i("Neariah", "Card clicked: " + recipe.id)
      }
+
 
         //Implicit intent
       /*  holder.itemView.setOnClickListener { v ->

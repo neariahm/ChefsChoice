@@ -104,7 +104,11 @@ See early mockups: "https://wireframe.cc/pro/pp/a2d29070b510511"
 ### Models
 [Add table of models]
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+| HTTP Verb     | Endpoint      | Description   
+| ------------- | ------------- | --------    |
+| `GET`        | recipes/findByIngredients         | `get recipes by ingredients`   |
+| `GET`        | food/trivia/random         | `get random food trivia`   |
+| `GET`        | recipes/{id}/card        | `get a recipe card for a recipe`   |
+| `GET`        | recipes/complexSearch      | `get recipes by using advanced filtering and ranking`   |
+| `GET`        | food/products/upc/{upc}/      | `get information about a packaged food using its UPC`   |
 

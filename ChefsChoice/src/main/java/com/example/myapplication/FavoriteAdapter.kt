@@ -39,7 +39,8 @@ class FavoriteAdapter : ListAdapter <FavoriteEntity, FavoriteAdapter.FavoriteVie
      //   holder.title1.setText(recipe.title)
         holder.view.checkBox.setOnClickListener {
             holder.view.checkBox.isChecked = recipe.favorite
-            holder.view.checkBox.tag = 0
+
+            //manually check to see if the checkbox is filled then set it
             onDeleteClick?.let {
                 recipe?.let { it1 ->
                     it(it1)

@@ -67,8 +67,7 @@ class RecipesListAdapter : ListAdapter<FavoriteEntity, RecipesListAdapter.Recipe
         val recipe = getItem(position)
         holder.bind(recipe)
         holder.view.checkBox.setOnClickListener {
-            holder.view.checkBox.isChecked = recipe.favorite
-            holder.view.checkBox.tag = 0
+        holder.view.checkBox.isChecked = recipe.favorite
             onSaveClick?.let {
                 recipe?.let { it1 ->
                     it(it1)

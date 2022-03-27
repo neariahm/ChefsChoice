@@ -113,8 +113,8 @@ See early mockups: "https://wireframe.cc/pro/pp/a2d29070b510511"
 ![IMG_2403](https://user-images.githubusercontent.com/83090104/150610780-6ac70369-9e2a-4832-aefc-89422a03daf9.PNG)
 
 ### Interactive Prototype
-![]https://media.giphy.com/media/KfskAx2EDyu4av1dbK/giphy.gif
-![]https://media.giphy.com/media/xeKrXygDIomMVnRmqk/giphy.gif
+![](https://media.giphy.com/media/KfskAx2EDyu4av1dbK/giphy.gif)
+![](https://media.giphy.com/media/xeKrXygDIomMVnRmqk/giphy.gif)
 
 
 ### Networking

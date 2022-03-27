@@ -123,7 +123,8 @@ See early mockups: "https://wireframe.cc/pro/pp/a2d29070b510511"
 Spoonacular API Documentation: https://spoonacular.com/food-api/docs
 
  * Base URL - https://api.spoonacular.com/
-| HTTP Verb     | Endpoint      | Description   
+ 
+| HTTP Verb     | Endpoint      | Description |  
 | ------------- | ------------- | --------    |
 | `GET`        | recipes/findByIngredients         | `get recipes by ingredients`   |
 | `GET`        | food/trivia/random         | `get random food trivia`   |

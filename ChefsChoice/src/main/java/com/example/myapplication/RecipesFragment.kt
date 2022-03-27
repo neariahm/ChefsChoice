@@ -45,10 +45,11 @@ class RecipesFragment : Fragment() {
             override fun onQueryTextSubmit( query: String): Boolean {
                 Log.i("Neariah", query)
                 viewModel.getChefPhotos(query)
-                if(binding.recyclerView.isEmpty()){
-                    Toast.makeText(activity, "No recipes found, please try another ingredient.", Toast.LENGTH_LONG)
-                        .show()
-                }
+                // Show toast when API returns empty list (cannot find ingredient) however shows on first search
+                //if(binding.recyclerView.isEmpty()){
+                //    Toast.makeText(activity, "No recipes found, please try another ingredient.", Toast.LENGTH_LONG)
+                //        .show()
+               // }
                 return true
 
             }

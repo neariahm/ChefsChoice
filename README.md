@@ -114,10 +114,7 @@ See early mockups: "https://wireframe.cc/pro/pp/a2d29070b510511"
 
 ### [BONUS] Interactive Prototype
 
-## Schema 
-[This section will be completed in Unit 9]
-### Models
-[Add table of models]
+
 ### Networking
 
 Spoonacular API Documentation: https://spoonacular.com/food-api/docs

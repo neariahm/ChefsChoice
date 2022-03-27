@@ -41,13 +41,13 @@ private const val BASE_URL = "https://api.spoonacular.com/"
         @GET("recipes/{id}/card?apiKey=0b7156ae48984e2091b073fc1fe388dd")
         suspend fun getRecipe(@Path("id") recipeId: String) : RecipeCard
 
-        @GET("recipes/complexSearch?apiKey=0b7156ae48984e2091b073fc1fe388dd&cuisine=american&sort=popularity&number=3")
+        @GET("recipes/complexSearch?apiKey=0b7156ae48984e2091b073fc1fe388dd&cuisine=american&sort=popularity&number=5")
         suspend fun getPopular() : ComplexSearch
 
-        @GET("recipes/complexSearch?apiKey=0b7156ae48984e2091b073fc1fe388dd&type=dessert&sort=random&number=3")
+        @GET("recipes/complexSearch?apiKey=0b7156ae48984e2091b073fc1fe388dd&type=dessert&sort=random&number=5")
         suspend fun getDessert() : ComplexSearch
 
-        @GET("recipes/complexSearch?apiKey=0b7156ae48984e2091b073fc1fe388dd&maxReadyTime=30&sort=random&number=3")
+        @GET("recipes/complexSearch?apiKey=0b7156ae48984e2091b073fc1fe388dd&maxReadyTime=30&sort=random&number=5")
         suspend fun getQuick() : ComplexSearch
 
         @GET("food/products/upc/{upc}/?apiKey=0b7156ae48984e2091b073fc1fe388dd")

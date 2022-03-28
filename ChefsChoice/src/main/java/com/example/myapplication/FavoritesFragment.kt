@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.coroutineScope
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -28,6 +29,7 @@ class FavoritesFragment : Fragment() {
     val viewModel: FavoriteViewModel by activityViewModels() {
         FavoriteViewModelFactory((activity?.application as RecipesApplication).database.favoriteDao())
     }
+  //val viewModel2: FavoriteViewModel = ViewModelProvider(this@FavoritesFragment)[FavoriteViewModel::class.java]
 
     private lateinit var recyclerView: RecyclerView
     val favoriteAdapter = FavoriteAdapter()

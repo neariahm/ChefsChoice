@@ -13,6 +13,9 @@ interface FavoriteDao {
    /* @Query("SELECT * from item WHERE id = :id")
     fun getFavorite(id: Int): Flow<FavoriteEntity> */
 
+    @Query("SELECT EXISTS(SELECT * FROM favoriteList WHERE id = :id)")
+    fun recipeExists(id:Int): Boolean
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(favoriteEntity: FavoriteEntity)
 

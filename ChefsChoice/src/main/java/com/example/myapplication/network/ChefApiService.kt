@@ -29,28 +29,28 @@ private const val BASE_URL = "https://api.spoonacular.com/"
 
     interface ChefTestService {
 
-        @GET("recipes/findByIngredients?apiKey=0b7156ae48984e2091b073fc1fe388dd&number=15&ranking=2")
+        @GET("recipes/findByIngredients?apiKey=575ab1371d4d48a596b7c608bc35cdbc&number=15&ranking=2")
         suspend fun getPhotos(@Query("ingredients") ingredient: String): List<FavoriteEntity>
 
-        @GET("food/trivia/random?apiKey=0b7156ae48984e2091b073fc1fe388dd")
+        @GET("food/trivia/random?apiKey=575ab1371d4d48a596b7c608bc35cdbc")
         suspend fun getTrivia(): Trivia
 
-        @GET("random?apiKey=0b7156ae48984e2091b073fc1fe388dd")
+        @GET("random?apiKey=575ab1371d4d48a596b7c608bc35cdbc")
         suspend fun getRandom(): RandomRecipe
 
-        @GET("recipes/{id}/card?apiKey=0b7156ae48984e2091b073fc1fe388dd")
+        @GET("recipes/{id}/card?apiKey=575ab1371d4d48a596b7c608bc35cdbc")
         suspend fun getRecipe(@Path("id") recipeId: String) : RecipeCard
 
-        @GET("recipes/complexSearch?apiKey=0b7156ae48984e2091b073fc1fe388dd&cuisine=american&sort=popularity&number=5")
+        @GET("recipes/complexSearch?apiKey=575ab1371d4d48a596b7c608bc35cdbc&cuisine=american&sort=popularity&number=3")
         suspend fun getPopular() : ComplexSearch
 
-        @GET("recipes/complexSearch?apiKey=0b7156ae48984e2091b073fc1fe388dd&type=dessert&sort=random&number=5")
+        @GET("recipes/complexSearch?apiKey=575ab1371d4d48a596b7c608bc35cdbc&type=dessert&sort=random&number=3")
         suspend fun getDessert() : ComplexSearch
 
-        @GET("recipes/complexSearch?apiKey=0b7156ae48984e2091b073fc1fe388dd&maxReadyTime=30&sort=random&number=5")
+        @GET("recipes/complexSearch?apiKey=575ab1371d4d48a596b7c608bc35cdbc&maxReadyTime=30&sort=random&number=3")
         suspend fun getQuick() : ComplexSearch
 
-        @GET("food/products/upc/{upc}/?apiKey=0b7156ae48984e2091b073fc1fe388dd")
+        @GET("food/products/upc/{upc}/?apiKey=575ab1371d4d48a596b7c608bc35cdbc")
         suspend fun getBarcode(@Path("upc") upc: String): Upc
     }
     object ChefApi {

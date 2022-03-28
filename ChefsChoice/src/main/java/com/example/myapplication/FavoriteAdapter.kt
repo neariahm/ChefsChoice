@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.leanback.widget.DiffCallback
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -16,9 +17,9 @@ import com.bumptech.glide.Glide
 import com.example.myapplication.database.FavoriteEntity
 import com.example.myapplication.databinding.GridItemsBinding
 import com.example.myapplication.databinding.RecipeListBinding
-
-
-class FavoriteAdapter : ListAdapter <FavoriteEntity, FavoriteAdapter.FavoriteViewHolder>(DiffCallback) {
+import com.example.myapplication.viewmodel.FavoriteViewModel
+//(private val viewModel: FavoriteViewModel)
+class FavoriteAdapter  : ListAdapter <FavoriteEntity, FavoriteAdapter.FavoriteViewHolder>(DiffCallback) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -37,8 +38,21 @@ class FavoriteAdapter : ListAdapter <FavoriteEntity, FavoriteAdapter.FavoriteVie
         val recipe = getItem(position)
         holder.bind(recipe)
      //   holder.title1.setText(recipe.title)
+       val viewModel: FavoriteViewModel = ViewModelProvider(holder.itemView.context as MainActivity2)[FavoriteViewModel::class.java]
+        //ViewModelProvider(this@FavoritesFragment)[FavoriteViewModel::class.java]
+        val id = recipe.id
+        val recipeFavorited = if (id != null) {
+            viewModel.recipeExists(id)
+        } else { false }
+
+        // Check the team's box if the ID is in database
+        if (recipeFavorited) {
+            holder.view.checkBox.isChecked = true
+        }
+      //  holder.view.checkBox.isChecked = true
         holder.view.checkBox.setOnClickListener {
             holder.view.checkBox.isChecked = recipe.favorite
+            Log.i("Neariah", "Card clicked: " + recipe.favorite)
 
             //manually check to see if the checkbox is filled then set it
             onDeleteClick?.let {

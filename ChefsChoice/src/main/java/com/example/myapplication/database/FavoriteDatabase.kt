@@ -20,6 +20,7 @@ abstract class FavoriteDatabase : RoomDatabase() {
                     "favorite_database"
                 )
                     .fallbackToDestructiveMigration()
+                    .allowMainThreadQueries()
                     .build()
                     .also { INSTANCE = it }
             }

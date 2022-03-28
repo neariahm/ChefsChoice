@@ -29,7 +29,7 @@ private const val BASE_URL = "https://api.spoonacular.com/"
 
     interface ChefTestService {
 
-        @GET("recipes/findByIngredients?apiKey=575ab1371d4d48a596b7c608bc35cdbc&number=15&ranking=2")
+        @GET("recipes/findByIngredients?apiKey=575ab1371d4d48a596b7c608bc35cdbc&number=15&ranking=1")
         suspend fun getPhotos(@Query("ingredients") ingredient: String): List<FavoriteEntity>
 
         @GET("food/trivia/random?apiKey=575ab1371d4d48a596b7c608bc35cdbc")

@@ -11,5 +11,6 @@ data class FavoriteEntity (
 //can add Int = 0;
     @ColumnInfo(name = "recipe_name") val title: String,
     @ColumnInfo(name = "image_url") val image: String,
-    @ColumnInfo(name = "favorite") val favorite: Boolean = false,
+    @ColumnInfo(name = "favorite") var favorite: Boolean = true, // needs to be set to true for
+                                                                //heart to fill red
     )

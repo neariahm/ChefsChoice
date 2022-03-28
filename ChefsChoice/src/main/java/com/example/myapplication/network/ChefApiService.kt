@@ -29,23 +29,28 @@ private const val BASE_URL = "https://api.spoonacular.com/"
 
     interface ChefTestService {
 
-        @GET("recipes/findByIngredients?apiKey=16c7675b72404cf5b7dd4b41afb2d195&number=15&ranking=2")
+        @GET("recipes/findByIngredients?apiKey=575ab1371d4d48a596b7c608bc35cdbc&number=15&ranking=1")
         suspend fun getPhotos(@Query("ingredients") ingredient: String): List<FavoriteEntity>
 
-        @GET("food/trivia/random?apiKey=16c7675b72404cf5b7dd4b41afb2d195")
+        @GET("food/trivia/random?apiKey=575ab1371d4d48a596b7c608bc35cdbc")
         suspend fun getTrivia(): Trivia
 
-        @GET("random?apiKey=16c7675b72404cf5b7dd4b41afb2d195")
+        @GET("random?apiKey=575ab1371d4d48a596b7c608bc35cdbc")
         suspend fun getRandom(): RandomRecipe
 
-        @GET("recipes/{id}/card?apiKey=16c7675b72404cf5b7dd4b41afb2d195")
+        @GET("recipes/{id}/card?apiKey=575ab1371d4d48a596b7c608bc35cdbc")
         suspend fun getRecipe(@Path("id") recipeId: String) : RecipeCard
 
-        @GET("recipes/findByIngredients?apiKey=16c7675b72404cf5b7dd4b41afb2d195&ingredients=beef&number=3&ranking=2&sort=popularity")
-     //   @GET("recipes/complexSearch?apiKey=16c7675b72404cf5b7dd4b41afb2d195&cuisine=american&sort=popularity&number=10")
-        suspend fun getPopular() : List<ComplexSearchData>
+        @GET("recipes/complexSearch?apiKey=575ab1371d4d48a596b7c608bc35cdbc&cuisine=american&sort=popularity&number=3")
+        suspend fun getPopular() : ComplexSearch
 
-        @GET("food/products/upc/{upc}/?apiKey=16c7675b72404cf5b7dd4b41afb2d195")
+        @GET("recipes/complexSearch?apiKey=575ab1371d4d48a596b7c608bc35cdbc&type=dessert&sort=random&number=3")
+        suspend fun getDessert() : ComplexSearch
+
+        @GET("recipes/complexSearch?apiKey=575ab1371d4d48a596b7c608bc35cdbc&maxReadyTime=30&sort=random&number=3")
+        suspend fun getQuick() : ComplexSearch
+
+        @GET("food/products/upc/{upc}/?apiKey=575ab1371d4d48a596b7c608bc35cdbc")
         suspend fun getBarcode(@Path("upc") upc: String): Upc
     }
     object ChefApi {

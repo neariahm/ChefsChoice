@@ -6,8 +6,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.leanback.widget.DiffCallback
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -16,6 +18,7 @@ import com.example.myapplication.database.FavoriteDao
 import com.example.myapplication.database.FavoriteEntity
 import com.example.myapplication.databinding.RecipeListBinding
 import com.example.myapplication.network.Recipes
+import com.example.myapplication.viewmodel.FavoriteViewModel
 
 class RecipesListAdapter : ListAdapter<FavoriteEntity, RecipesListAdapter.RecipesViewHolder>(diffUtilCallback) {
     interface OnItemClickedListener {
@@ -66,9 +69,20 @@ class RecipesListAdapter : ListAdapter<FavoriteEntity, RecipesListAdapter.Recipe
     override fun onBindViewHolder(holder: RecipesViewHolder, position: Int) {
         val recipe = getItem(position)
         holder.bind(recipe)
+        val viewModel: RecipesViewModel = ViewModelProvider(holder.itemView.context as MainActivity2)[RecipesViewModel::class.java]
+        //ViewModelProvider(this@FavoritesFragment)[FavoriteViewModel::class.java]
+        val id = recipe.id
+        val recipeFavorited = if (id != null) {
+            viewModel.recipeExists(id)
+        } else { false }
+
+        // Check the team's box if the ID is in database
+        if (recipeFavorited) {
+            holder.view.checkBox.isChecked = true
+        }
         holder.view.checkBox.setOnClickListener {
-            holder.view.checkBox.isChecked = recipe.favorite
-            holder.view.checkBox.tag = 0
+        holder.view.checkBox.isChecked = recipe.favorite
+            Log.i("Neariah", "Card clicked: " + recipe.favorite)
             onSaveClick?.let {
                 recipe?.let { it1 ->
                     it(it1)
@@ -83,6 +97,7 @@ class RecipesListAdapter : ListAdapter<FavoriteEntity, RecipesListAdapter.Recipe
          v.context.startActivity(intent)
          Log.i("Neariah", "Card clicked: " + recipe.id)
      }
+
 
         //Implicit intent
       /*  holder.itemView.setOnClickListener { v ->

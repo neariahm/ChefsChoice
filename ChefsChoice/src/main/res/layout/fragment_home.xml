@@ -10,9 +10,16 @@
         <variable
             name="viewModel"
             type="com.example.myapplication.PopularViewModel" />
+        <variable
+            name="data"
+            type="com.example.myapplication.network.ComplexSearch" />
 
     </data>
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true" >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -42,7 +49,6 @@
             android:text="Most Popular"
             android:textColor="@color/green"
             android:textSize="20dp"
-
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -51,20 +57,80 @@
             app:layout_constraintTop_toBottomOf="@id/feelingHungry"
             app:layout_constraintVertical_bias="0.0" />
 
+        <TextView
+            android:id="@+id/quickAndEasy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:text="Quick and Easy"
+            android:textColor="@color/green"
+            android:textSize="20dp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.086"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/feelingHungry"
+            app:layout_constraintVertical_bias="0.275" />
+
+
+        <TextView
+            android:id="@+id/sweetTreats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:text="Sweet Treats"
+            android:textColor="@color/green"
+            android:textSize="20dp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/feelingHungry"
+            app:layout_constraintVertical_bias="0.548" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/popularRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingTop="15dp"
-            app:info="@{viewModel.photos}"
+            app:info="@{viewModel.photos.results}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/dessertRecyclerView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
+
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.456"
+            app:layout_constraintVertical_bias="0.373"
+            tools:listitem="@layout/popular_list" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/quickRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="15dp"
+            app:info="@{viewModel.quick.results}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/popularRecyclerView"
+            tools:layout_editor_absoluteX="-16dp"
+            tools:layout_editor_absoluteY="441dp"
+            tools:listitem="@layout/popular_list" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dessertRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="15dp"
+            app:info="@{viewModel.dessert.results}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/quickRecyclerView"
+            tools:layout_editor_absoluteX="-16dp"
+            tools:layout_editor_absoluteY="441dp"
             tools:listitem="@layout/popular_list" />
 
         <TextView
@@ -93,7 +159,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/popularRecyclerView"
+            app:layout_constraintTop_toBottomOf="@+id/dessertRecyclerView"
             app:layout_constraintVertical_bias="0.111" />
 
         <Button
@@ -109,4 +175,5 @@
             app:layout_constraintVertical_bias="0.008" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

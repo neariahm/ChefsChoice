@@ -9,7 +9,7 @@
 ## Overview
 ### Description
 
-Chefs’ Choice makes meal planning simple through recipe recommendations for users based on ingredients they already have in their fridge or pantry.
+Chefs’ Choice makes mealtime simple through recipe recommendations for users from everyday ingredients found at home.
 
 Team Members:
 
@@ -52,59 +52,87 @@ Bryan Williamson
 
 ### 2. Screen Archetypes
 
-* Splash/Login Screen 
-   * A brief introduction of the app
- 
-* Camera Screen 
-   * Allows user to capture image in real-time
+* Splash Screen 
+   * A brief introduction of the app (logo & app name)
 
-* Ingredients Screen 
-   * Allows user to see the identified items that will be used to generate recipes
-   
-*  Recipe Screen 
-   * Allows user to scroll through and select a recipe 
+* Login Screen 
+   * Allows user to sign in via email or proceed without login 
+
+* Home Screen 
+   * Allows user to browse recipes categorized by type (ex. popularity) and learn fun facts about food
+
+* Recipes Screen 
+   * Allows user to search specified ingredients that will be used to generate recipes displayed in a scrollable list
+   * Allows user to use camera to scan UPC barcodes in real-time and generate information displayed in an alert dialog box
    
 *  Detail Screen 
    * Allows user to click a recipe option and view more information about it in detail
  
 *  Favorites Screen 
    * Allows user to see an overview of their favorite recipes
+
+*  Information Screen 
+   * Allows user to see a description of how to use the app
    
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* App Introduction
-* Camera
-* Suggested Recipes 
-
-Optional: 
-* Favorites 
+*  Bottom Bar Navigation
+  *  Home Screen 
+  *  Recipes Screen 
+  *  Favorites Screen 
+  *  Info Screen
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
+* Splash Screen
    * [list screen navigation here]
    * ...
-* [list second screen here]
+* Login Screen 
+   * [list screen navigation here]
+   * ...
+* Home Screen
+   * [list screen navigation here]
+   * ...
+* Recipes Screen 
+   * [list screen navigation here]
+   * ...
+* Favorite Screen 
+   * [list screen navigation here]
+   * ...
+* Info Screen 
    * [list screen navigation here]
    * ...
 
 ## Wireframes
 See early mockups: "https://wireframe.cc/pro/pp/a2d29070b510511" 
 
-### [BONUS] Digital Wireframes & Mockups
+### Digital Wireframes & Mockups
 ![IMG_2403](https://user-images.githubusercontent.com/83090104/150610780-6ac70369-9e2a-4832-aefc-89422a03daf9.PNG)
 
-### [BONUS] Interactive Prototype
+### Interactive Prototype
+![](https://media.giphy.com/media/KfskAx2EDyu4av1dbK/giphy.gif)
+![](https://media.giphy.com/media/xeKrXygDIomMVnRmqk/giphy.gif)
+![](https://media.giphy.com/media/NrDsU9QDFjJs2vuCPz/giphy.gif)
+![](https://media.giphy.com/media/gI5UqdgQKYlicXEcz7/giphy.gif)
+![](https://media.giphy.com/media/jLL8LpAagEDcm5RyRp/giphy.gif)
+![](https://media.giphy.com/media/lXDmY2KXEyhUzhzKOQ/giphy.gif)
+![](https://media.giphy.com/media/nbQo0uR9HpPQnYt2bG/giphy.gif)
 
-## Schema 
-[This section will be completed in Unit 9]
-### Models
-[Add table of models]
+
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+
+Spoonacular API Documentation: https://spoonacular.com/food-api/docs
+
+ * Base URL - https://api.spoonacular.com/
+ 
+| HTTP Verb     | Endpoint      | Description |  
+| ------------- | ------------- | --------    |
+| `GET`        | recipes/findByIngredients         | `get recipes by ingredients`   |
+| `GET`        | food/trivia/random         | `get random food trivia`   |
+| `GET`        | recipes/{id}/card        | `get a recipe card for a recipe`   |
+| `GET`        | recipes/complexSearch      | `get recipes by using advanced filtering and ranking`   |
+| `GET`        | food/products/upc/{upc}/      | `get information about a packaged food using its UPC`   |
 

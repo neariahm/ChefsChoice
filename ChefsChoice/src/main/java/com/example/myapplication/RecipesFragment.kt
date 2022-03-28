@@ -10,6 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.view.isEmpty
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
@@ -39,16 +41,26 @@ class RecipesFragment : Fragment() {
 
         //Get user input from searchview & query the api to get the results
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String): Boolean {
+
+            override fun onQueryTextSubmit( query: String): Boolean {
                 Log.i("Neariah", query)
                 viewModel.getChefPhotos(query)
+             // Show toast if api returns empty list (ex. injera) however showing on first search
+                //   if(binding.recyclerView.isEmpty()){
+              //      Toast.makeText(activity, "No recipes found, please try another ingredient.", Toast.LENGTH_LONG)
+              //          .show()
+             //   }
                 return true
-            }
 
+            }
             override fun onQueryTextChange(s: String?): Boolean {
                 return false
+
             }
+
         })
+
+
         binding.recyclerView.adapter = adapter
         adapter.onSaveClickListener {
             lifecycleScope.launch {
@@ -61,8 +73,9 @@ class RecipesFragment : Fragment() {
             val intent = Intent(activity, MainActivity3::class.java)
              activity?.startActivity(intent)
         }
-        val strtext = getArguments()?.getString("barcode")
-        binding.textView2.text = strtext
+
+
+
 
         return binding.root
     }

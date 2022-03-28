@@ -66,6 +66,9 @@ class RecipesViewModel(val favoriteDao: FavoriteDao) : ViewModel() {
         suspend fun insert(favoriteEntity: FavoriteEntity) {
             favoriteDao.insert(favoriteEntity)
         }
+    fun recipeExists(id: Int): Boolean{
+        return favoriteDao.recipeExists(id)
+    }
     }
 
 

@@ -1,5 +1,7 @@
 # Chefs' Choice
 
+![](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+
 ## Table of Contents
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
